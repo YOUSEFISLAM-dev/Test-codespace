@@ -1,7 +1,7 @@
 # Web Video Editor
 
 A browser-based video editing application that allows you to edit videos directly in your web browser without requiring any software installation.
-
+**First Version**
 ## Features
 
 - **Video Trimming**: Cut unwanted sections from your videos
