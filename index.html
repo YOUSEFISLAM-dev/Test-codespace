@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Video Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="py-3 mb-4 border-bottom">
+            <h1 class="text-center">Web Video Editor</h1>
+        </header>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="video-container">
+                    <canvas id="preview-canvas"></canvas>
+                    <div id="timeline-container">
+                        <div id="timeline"></div>
+                        <div id="playhead"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tools-panel">
+                    <h3>Tools</h3>
+                    <div class="mb-3">
+                        <label for="videoFile" class="form-label">Upload Video</label>
+                        <input class="form-control" type="file" id="videoFile" accept="video/*">
+                    </div>
+                    <div class="mb-3">
+                        <button id="trimBtn" class="btn btn-primary">Trim</button>
+                        <button id="cropBtn" class="btn btn-primary">Crop</button>
+                        <button id="filterBtn" class="btn btn-primary">Filters</button>
+                    </div>
+                    <div class="mb-3">
+                        <button id="playBtn" class="btn btn-success">Play</button>
+                        <button id="pauseBtn" class="btn btn-warning">Pause</button>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exportFormat" class="form-label">Export Format</label>
+                        <select class="form-select" id="exportFormat">
+                            <option value="mp4">MP4</option>
+                            <option value="webm">WebM</option>
+                            <option value="gif">GIF</option>
+                        </select>
+                    </div>
+                    <button id="exportBtn" class="btn btn-danger">Export</button>
+                </div>
+                <div class="properties-panel mt-4">
+                    <h3>Properties</h3>
+                    <div id="properties-content">
+                        <!-- Properties will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden video element for processing -->
+    <video id="video-source" style="display: none;"></video>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
